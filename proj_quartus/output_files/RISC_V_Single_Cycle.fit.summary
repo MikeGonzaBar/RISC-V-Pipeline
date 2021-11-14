@@ -1,0 +1,18 @@
+Fitter Status : Successful - Tue Oct 26 17:01:22 2021
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : RISC_V_Single_Cycle
+Top-level Entity Name : RISC_V_Single_Cycle
+Family : MAX 10
+Device : 10M50DAF484C7G
+Timing Models : Final
+Total logic elements : 13,229 / 49,760 ( 27 % )
+    Total combinational functions : 8,251 / 49,760 ( 17 % )
+    Dedicated logic registers : 9,216 / 49,760 ( 19 % )
+Total registers : 9216
+Total pins : 34 / 360 ( 9 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,677,312 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0 / 2 ( 0 % )
