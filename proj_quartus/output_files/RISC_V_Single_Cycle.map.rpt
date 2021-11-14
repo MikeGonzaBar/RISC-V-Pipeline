@@ -1,0 +1,978 @@
+Analysis & Synthesis report for RISC_V_Single_Cycle
+Sun Nov 14 17:09:41 2021
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |RISC_V_Single_Cycle
+ 10. Parameter Settings for User Entity Instance: PC_Register:PC
+ 11. Parameter Settings for User Entity Instance: Program_Memory:Instruction_memory
+ 12. Parameter Settings for User Entity Instance: Adder_32_Bits:Add
+ 13. Parameter Settings for User Entity Instance: Pipeline_Register:PIPELINE_IF_ID
+ 14. Parameter Settings for User Entity Instance: Register_File:Registers
+ 15. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_zero
+ 16. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_ra
+ 17. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_sp
+ 18. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_gp
+ 19. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_tp
+ 20. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_t0
+ 21. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_t1
+ 22. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_t2
+ 23. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s0_fp
+ 24. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s1
+ 25. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_a0
+ 26. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_a1
+ 27. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_a2
+ 28. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_a3
+ 29. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_a4
+ 30. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_a5
+ 31. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_a6
+ 32. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_a7
+ 33. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s2
+ 34. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s3
+ 35. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s4
+ 36. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s5
+ 37. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s6
+ 38. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s7
+ 39. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s8
+ 40. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s9
+ 41. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s10
+ 42. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s11
+ 43. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_t3
+ 44. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_t4
+ 45. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_t5
+ 46. Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_t6
+ 47. Parameter Settings for User Entity Instance: Register_File:Registers|MUXRegisterFile:MUXRegister1
+ 48. Parameter Settings for User Entity Instance: Register_File:Registers|MUXRegisterFile:MUXRegister2
+ 49. Parameter Settings for User Entity Instance: Pipeline_Register:PIPELINE_ID_EX
+ 50. Parameter Settings for User Entity Instance: Adder_32_Bits:AddSum
+ 51. Parameter Settings for User Entity Instance: Multiplexer_2_to_1:MUX_DATA_OR_IMM_FOR_ALU
+ 52. Parameter Settings for User Entity Instance: Pipeline_Register:PIPELINE_EX_MEM
+ 53. Parameter Settings for User Entity Instance: Data_Memory:Data_Memory
+ 54. Parameter Settings for User Entity Instance: Pipeline_Register:PIPELINE_MEM_WB
+ 55. Parameter Settings for User Entity Instance: Multiplexer_2_to_1:MUX_READ_DATA_OR_ALU_RESULT
+ 56. Port Connectivity Checks: "Multiplexer_2_to_1:MUX_READ_DATA_OR_ALU_RESULT"
+ 57. Port Connectivity Checks: "Data_Memory:Data_Memory"
+ 58. Port Connectivity Checks: "Pipeline_Register:PIPELINE_EX_MEM"
+ 59. Port Connectivity Checks: "Adder_32_Bits:AddSum"
+ 60. Port Connectivity Checks: "Pipeline_Register:PIPELINE_ID_EX"
+ 61. Port Connectivity Checks: "Register_File:Registers|Register:Register_zero"
+ 62. Port Connectivity Checks: "Register_File:Registers"
+ 63. Port Connectivity Checks: "Control:CONTROL_UNIT"
+ 64. Port Connectivity Checks: "Adder_32_Bits:Add"
+ 65. Post-Synthesis Netlist Statistics for Top Partition
+ 66. Elapsed Time Per Partition
+ 67. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Nov 14 17:09:41 2021       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; RISC_V_Single_Cycle                         ;
+; Top-level Entity Name              ; RISC_V_Single_Cycle                         ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 2                                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++------------------------------------------------------------------+---------------------+---------------------+
+; Option                                                           ; Setting             ; Default Value       ;
++------------------------------------------------------------------+---------------------+---------------------+
+; Device                                                           ; 10M50DAF484C7G      ;                     ;
+; Top-level entity name                                            ; RISC_V_Single_Cycle ; RISC_V_Single_Cycle ;
+; Family name                                                      ; MAX 10              ; Cyclone V           ;
+; Use smart compilation                                            ; Off                 ; Off                 ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                  ; On                  ;
+; Enable compact report table                                      ; Off                 ; Off                 ;
+; Restructure Multiplexers                                         ; Auto                ; Auto                ;
+; Create Debugging Nodes for IP Cores                              ; Off                 ; Off                 ;
+; Preserve fewer node names                                        ; On                  ; On                  ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable              ; Enable              ;
+; Verilog Version                                                  ; Verilog_2001        ; Verilog_2001        ;
+; VHDL Version                                                     ; VHDL_1993           ; VHDL_1993           ;
+; State Machine Processing                                         ; Auto                ; Auto                ;
+; Safe State Machine                                               ; Off                 ; Off                 ;
+; Extract Verilog State Machines                                   ; On                  ; On                  ;
+; Extract VHDL State Machines                                      ; On                  ; On                  ;
+; Ignore Verilog initial constructs                                ; Off                 ; Off                 ;
+; Iteration limit for constant Verilog loops                       ; 5000                ; 5000                ;
+; Iteration limit for non-constant Verilog loops                   ; 250                 ; 250                 ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                  ; On                  ;
+; Infer RAMs from Raw Logic                                        ; On                  ; On                  ;
+; Parallel Synthesis                                               ; On                  ; On                  ;
+; DSP Block Balancing                                              ; Auto                ; Auto                ;
+; NOT Gate Push-Back                                               ; On                  ; On                  ;
+; Power-Up Don't Care                                              ; On                  ; On                  ;
+; Remove Redundant Logic Cells                                     ; Off                 ; Off                 ;
+; Remove Duplicate Registers                                       ; On                  ; On                  ;
+; Ignore CARRY Buffers                                             ; Off                 ; Off                 ;
+; Ignore CASCADE Buffers                                           ; Off                 ; Off                 ;
+; Ignore GLOBAL Buffers                                            ; Off                 ; Off                 ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                 ; Off                 ;
+; Ignore LCELL Buffers                                             ; Off                 ; Off                 ;
+; Ignore SOFT Buffers                                              ; On                  ; On                  ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                 ; Off                 ;
+; Optimization Technique                                           ; Balanced            ; Balanced            ;
+; Carry Chain Length                                               ; 70                  ; 70                  ;
+; Auto Carry Chains                                                ; On                  ; On                  ;
+; Auto Open-Drain Pins                                             ; On                  ; On                  ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                 ; Off                 ;
+; Auto ROM Replacement                                             ; On                  ; On                  ;
+; Auto RAM Replacement                                             ; On                  ; On                  ;
+; Auto DSP Block Replacement                                       ; On                  ; On                  ;
+; Auto Shift Register Replacement                                  ; Auto                ; Auto                ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto                ; Auto                ;
+; Auto Clock Enable Replacement                                    ; On                  ; On                  ;
+; Strict RAM Replacement                                           ; Off                 ; Off                 ;
+; Allow Synchronous Control Signals                                ; On                  ; On                  ;
+; Force Use of Synchronous Clear Signals                           ; Off                 ; Off                 ;
+; Auto RAM Block Balancing                                         ; On                  ; On                  ;
+; Auto RAM to Logic Cell Conversion                                ; Off                 ; Off                 ;
+; Auto Resource Sharing                                            ; Off                 ; Off                 ;
+; Allow Any RAM Size For Recognition                               ; Off                 ; Off                 ;
+; Allow Any ROM Size For Recognition                               ; Off                 ; Off                 ;
+; Allow Any Shift Register Size For Recognition                    ; Off                 ; Off                 ;
+; Use LogicLock Constraints during Resource Balancing              ; On                  ; On                  ;
+; Ignore translate_off and synthesis_off directives                ; Off                 ; Off                 ;
+; Timing-Driven Synthesis                                          ; On                  ; On                  ;
+; Report Parameter Settings                                        ; On                  ; On                  ;
+; Report Source Assignments                                        ; On                  ; On                  ;
+; Report Connectivity Checks                                       ; On                  ; On                  ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                 ; Off                 ;
+; Synchronization Register Chain Length                            ; 2                   ; 2                   ;
+; Power Optimization During Synthesis                              ; Normal compilation  ; Normal compilation  ;
+; HDL message level                                                ; Level2              ; Level2              ;
+; Suppress Register Optimization Related Messages                  ; Off                 ; Off                 ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000                ; 5000                ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000                ; 5000                ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                 ; 100                 ;
+; Clock MUX Protection                                             ; On                  ; On                  ;
+; Auto Gated Clock Conversion                                      ; Off                 ; Off                 ;
+; Block Design Naming                                              ; Auto                ; Auto                ;
+; SDC constraint protection                                        ; Off                 ; Off                 ;
+; Synthesis Effort                                                 ; Auto                ; Auto                ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                  ; On                  ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                 ; Off                 ;
+; Analysis & Synthesis Message Level                               ; Medium              ; Medium              ;
+; Disable Register Merging Across Hierarchies                      ; Auto                ; Auto                ;
+; Resource Aware Inference For Block RAM                           ; On                  ; On                  ;
++------------------------------------------------------------------+---------------------+---------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                   ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                        ; Library ;
++----------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------+---------+
+; ../src/RISC_V_Single_Cycle.v                       ; yes             ; User Verilog HDL File        ; D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v   ;         ;
+; ../src/Register_File.v                             ; yes             ; User Verilog HDL File        ; D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Register_File.v         ;         ;
+; ../src/Register.v                                  ; yes             ; User Verilog HDL File        ; D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Register.v              ;         ;
+; ../src/Program_Memory.v                            ; yes             ; User Verilog HDL File        ; D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Program_Memory.v        ;         ;
+; ../src/PC_Register.v                               ; yes             ; User Verilog HDL File        ; D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/PC_Register.v           ;         ;
+; ../src/MUX_Register_File.v                         ; yes             ; User Verilog HDL File        ; D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/MUX_Register_File.v     ;         ;
+; ../src/Multiplexer_2_to_1.v                        ; yes             ; User Verilog HDL File        ; D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Multiplexer_2_to_1.v    ;         ;
+; ../src/Immediate_Unit.v                            ; yes             ; User Verilog HDL File        ; D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Immediate_Unit.v        ;         ;
+; ../src/Decoder_Register_File.v                     ; yes             ; User Verilog HDL File        ; D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Decoder_Register_File.v ;         ;
+; ../src/Data_Memory.v                               ; yes             ; User Verilog HDL File        ; D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Data_Memory.v           ;         ;
+; ../src/Control.v                                   ; yes             ; User Verilog HDL File        ; D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Control.v               ;         ;
+; ../src/ALU_Control.v                               ; yes             ; User Verilog HDL File        ; D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/ALU_Control.v           ;         ;
+; ../src/ALU.v                                       ; yes             ; User Verilog HDL File        ; D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/ALU.v                   ;         ;
+; ../src/Adder_32_Bits.v                             ; yes             ; User Verilog HDL File        ; D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Adder_32_Bits.v         ;         ;
+; ../src/Pipeline_Register.v                         ; yes             ; User Verilog HDL File        ; D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Pipeline_Register.v     ;         ;
+; /quartus/projects/risc_v_single_cycle/src/text.dat ; yes             ; Auto-Found Unspecified File  ; /quartus/projects/risc_v_single_cycle/src/text.dat                  ;         ;
++----------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 2     ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 2     ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name  ; Entity Name         ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------+---------------------+--------------+
+; |RISC_V_Single_Cycle       ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 2    ; 0            ; 0          ; |RISC_V_Single_Cycle ; RISC_V_Single_Cycle ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |RISC_V_Single_Cycle ;
++----------------------+-------+------------------------------------------------------+
+; Parameter Name       ; Value ; Type                                                 ;
++----------------------+-------+------------------------------------------------------+
+; PROGRAM_MEMORY_DEPTH ; 64    ; Signed Integer                                       ;
+; DATA_MEMORY_DEPTH    ; 128   ; Signed Integer                                       ;
++----------------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PC_Register:PC ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; N              ; 32    ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Program_Memory:Instruction_memory ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; MEMORY_DEPTH   ; 64    ; Signed Integer                                        ;
+; DATA_WIDTH     ; 32    ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Adder_32_Bits:Add ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; NBits          ; 32    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Pipeline_Register:PIPELINE_IF_ID ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; N              ; 32    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_zero ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_ra ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_sp ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_gp ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_tp ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_t0 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_t1 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_t2 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s0_fp ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s1 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_a0 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_a1 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_a2 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_a3 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_a4 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_a5 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_a6 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_a7 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s2 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s3 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s4 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s5 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s6 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s7 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s8 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s9 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s10 ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_s11 ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_t3 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_t4 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_t5 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|Register:Register_t6 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|MUXRegisterFile:MUXRegister1 ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:Registers|MUXRegisterFile:MUXRegister2 ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Pipeline_Register:PIPELINE_ID_EX ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; N              ; 145   ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Adder_32_Bits:AddSum ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; NBits          ; 32    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Multiplexer_2_to_1:MUX_DATA_OR_IMM_FOR_ALU ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; NBits          ; 32    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Pipeline_Register:PIPELINE_EX_MEM ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; N              ; 106   ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Data_Memory:Data_Memory ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; DATA_WIDTH     ; 256   ; Signed Integer                              ;
+; MEMORY_DEPTH   ; 1024  ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Pipeline_Register:PIPELINE_MEM_WB ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; N              ; 295   ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Multiplexer_2_to_1:MUX_READ_DATA_OR_ALU_RESULT ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; NBits          ; 256   ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Multiplexer_2_to_1:MUX_READ_DATA_OR_ALU_RESULT"                                                                                                                   ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                                                                                                                                    ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Mux_Data_0_i ; Input ; Warning  ; Input port expression (32 bits) is smaller than the input port (256 bits) it drives.  Extra input bit(s) "Mux_Data_0_i[255..32]" will be connected to GND. ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Data_Memory:Data_Memory"                                                                                                                                          ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                                                                                                                                    ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Write_Data_i ; Input ; Warning  ; Input port expression (32 bits) is smaller than the input port (256 bits) it drives.  Extra input bit(s) "Write_Data_i[255..32]" will be connected to GND. ;
+; Address_i    ; Input ; Warning  ; Input port expression (32 bits) is smaller than the input port (256 bits) it drives.  Extra input bit(s) "Address_i[255..32]" will be connected to GND.    ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Pipeline_Register:PIPELINE_EX_MEM"                                                                      ;
++--------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                     ; Type   ; Severity ; Details                                                                             ;
++--------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; pipeline_OUTPUT[101..69] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Adder_32_Bits:AddSum"                                                                                                                                                              ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Data0 ; Input ; Warning  ; Input port expression (33 bits) is wider than the input port (32 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Pipeline_Register:PIPELINE_ID_EX"                                                                                                                                                         ;
++----------------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                 ; Type   ; Severity ; Details                                                                                                                                                                   ;
++----------------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; pipeline_OUTPUT      ; Output ; Warning  ; Output or bidir port (145 bits) is smaller than the port expression (146 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
+; pipeline_OUTPUT[137] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                       ;
++----------------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register_File:Registers|Register:Register_zero" ;
++-----------+-------+----------+---------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                     ;
++-----------+-------+----------+---------------------------------------------+
+; DataInput ; Input ; Info     ; Stuck at GND                                ;
++-----------+-------+----------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register_File:Registers"                                                                                                                                                                     ;
++--------------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                                                                                                                                                               ;
++--------------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Write_Data_i ; Input ; Warning  ; Input port expression (256 bits) is wider than the input port (32 bits) it drives.  The 224 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++--------------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Control:CONTROL_UNIT"                                                                                        ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                  ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Branch_o ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "Adder_32_Bits:Add"  ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; Data1[31..3] ; Input ; Info     ; Stuck at GND ;
+; Data1[1..0]  ; Input ; Info     ; Stuck at GND ;
+; Data1[2]     ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-------------------+---------------------------------+
+; Type              ; Count                           ;
++-------------------+---------------------------------+
+; boundary_port     ; 2                               ;
+;                   ;                                 ;
+; Max LUT depth     ; 0.00                            ;
+; Average LUT depth ; 0.00                            ;
++-------------------+---------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sun Nov 14 17:09:24 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RISC_V_Single_Cycle -c RISC_V_Single_Cycle
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus/projects/risc_v_single_cycle/src/risc_v_single_cycle_tb.v
+    Info (12023): Found entity 1: RISC_V_Single_Cycle_TB File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle_TB.v Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus/projects/risc_v_single_cycle/src/risc_v_single_cycle.v
+    Info (12023): Found entity 1: RISC_V_Single_Cycle File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 20
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus/projects/risc_v_single_cycle/src/register_file.v
+    Info (12023): Found entity 1: Register_File File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Register_File.v Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus/projects/risc_v_single_cycle/src/register.v
+    Info (12023): Found entity 1: Register File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Register.v Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus/projects/risc_v_single_cycle/src/program_memory.v
+    Info (12023): Found entity 1: Program_Memory File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Program_Memory.v Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus/projects/risc_v_single_cycle/src/pc_register.v
+    Info (12023): Found entity 1: PC_Register File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/PC_Register.v Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus/projects/risc_v_single_cycle/src/mux_register_file.v
+    Info (12023): Found entity 1: MUXRegisterFile File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/MUX_Register_File.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus/projects/risc_v_single_cycle/src/multiplexer_2_to_1.v
+    Info (12023): Found entity 1: Multiplexer_2_to_1 File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Multiplexer_2_to_1.v Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus/projects/risc_v_single_cycle/src/immediate_unit.v
+    Info (12023): Found entity 1: Immediate_Unit File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Immediate_Unit.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus/projects/risc_v_single_cycle/src/decoder_register_file.v
+    Info (12023): Found entity 1: Decoder_Register_File File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Decoder_Register_File.v Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus/projects/risc_v_single_cycle/src/data_memory.v
+    Info (12023): Found entity 1: Data_Memory File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Data_Memory.v Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus/projects/risc_v_single_cycle/src/control.v
+    Info (12023): Found entity 1: Control File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Control.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus/projects/risc_v_single_cycle/src/alu_control.v
+    Info (12023): Found entity 1: ALU_Control File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/ALU_Control.v Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus/projects/risc_v_single_cycle/src/alu.v
+    Info (12023): Found entity 1: ALU File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/ALU.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus/projects/risc_v_single_cycle/src/adder_32_bits.v
+    Info (12023): Found entity 1: Adder_32_Bits File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Adder_32_Bits.v Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus/projects/risc_v_single_cycle/src/pipeline_register.v
+    Info (12023): Found entity 1: Pipeline_Register File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Pipeline_Register.v Line: 15
+Info (12127): Elaborating entity "RISC_V_Single_Cycle" for the top level hierarchy
+Info (12128): Elaborating entity "PC_Register" for hierarchy "PC_Register:PC" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 118
+Info (12128): Elaborating entity "Program_Memory" for hierarchy "Program_Memory:Instruction_memory" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 129
+Warning (10850): Verilog HDL warning at Program_Memory.v(34): number of words (12) in memory file does not match the number of elements in the address range [0:63] File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Program_Memory.v Line: 34
+Warning (10030): Net "rom.data_a" at Program_Memory.v(30) has no driver or initial value, using a default initial value '0' File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Program_Memory.v Line: 30
+Warning (10030): Net "rom.waddr_a" at Program_Memory.v(30) has no driver or initial value, using a default initial value '0' File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Program_Memory.v Line: 30
+Warning (10030): Net "rom.we_a" at Program_Memory.v(30) has no driver or initial value, using a default initial value '0' File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Program_Memory.v Line: 30
+Info (12128): Elaborating entity "Adder_32_Bits" for hierarchy "Adder_32_Bits:Add" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 139
+Info (12128): Elaborating entity "Pipeline_Register" for hierarchy "Pipeline_Register:PIPELINE_IF_ID" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 158
+Info (12128): Elaborating entity "Control" for hierarchy "Control:CONTROL_UNIT" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 177
+Info (12128): Elaborating entity "Register_File" for hierarchy "Register_File:Registers" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 193
+Info (12128): Elaborating entity "Decoder_Register_File" for hierarchy "Register_File:Registers|Decoder_Register_File:DECODER_REG_FILE" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Register_File.v Line: 43
+Info (12128): Elaborating entity "Register" for hierarchy "Register_File:Registers|Register:Register_zero" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Register_File.v Line: 59
+Info (12128): Elaborating entity "MUXRegisterFile" for hierarchy "Register_File:Registers|MUXRegisterFile:MUXRegister1" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Register_File.v Line: 481
+Info (12128): Elaborating entity "Immediate_Unit" for hierarchy "Immediate_Unit:Imm_Gen" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 201
+Info (12128): Elaborating entity "Pipeline_Register" for hierarchy "Pipeline_Register:PIPELINE_ID_EX" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 244
+Info (12128): Elaborating entity "Multiplexer_2_to_1" for hierarchy "Multiplexer_2_to_1:MUX_DATA_OR_IMM_FOR_ALU" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 273
+Info (12128): Elaborating entity "ALU_Control" for hierarchy "ALU_Control:ALU_CONTROL_UNIT" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 284
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU_UNIT" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 295
+Info (12128): Elaborating entity "Pipeline_Register" for hierarchy "Pipeline_Register:PIPELINE_EX_MEM" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 328
+Info (12128): Elaborating entity "Data_Memory" for hierarchy "Data_Memory:Data_Memory" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 349
+Info (12128): Elaborating entity "Pipeline_Register" for hierarchy "Pipeline_Register:PIPELINE_MEM_WB" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 373
+Info (12128): Elaborating entity "Multiplexer_2_to_1" for hierarchy "Multiplexer_2_to_1:MUX_READ_DATA_OR_ALU_RESULT" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 393
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "pipeline_id_ex_alu_op_w_o[2]" is missing source, defaulting to GND File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 89
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "pipeline_id_ex_alu_op_w_o[2]" is missing source, defaulting to GND File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 89
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "pipeline_id_ex_alu_op_w_o[2]" is missing source, defaulting to GND File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 89
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "pipeline_id_ex_alu_op_w_o[2]" is missing source, defaulting to GND File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 89
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "pipeline_id_ex_alu_op_w_o[2]" is missing source, defaulting to GND File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 89
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "pipeline_id_ex_alu_op_w_o[2]" is missing source, defaulting to GND File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 89
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "pipeline_id_ex_alu_op_w_o[2]" is missing source, defaulting to GND File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 89
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "pipeline_id_ex_alu_op_w_o[2]" is missing source, defaulting to GND File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 89
+Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 28
+    Warning (15610): No output dependent on input pin "reset" File: D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 31
+Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
+    Info: Peak virtual memory: 4752 megabytes
+    Info: Processing ended: Sun Nov 14 17:09:41 2021
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:38
+
+

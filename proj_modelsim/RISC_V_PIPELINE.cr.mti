@@ -1,0 +1,113 @@
+D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v {1 {vlog -work work -stats=none D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RISC_V_Single_Cycle
+
+Top level modules:
+	RISC_V_Single_Cycle
+
+} {} {}} D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Immediate_Unit.v {1 {vlog -work work -stats=none D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Immediate_Unit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Immediate_Unit
+
+Top level modules:
+	Immediate_Unit
+
+} {} {}} D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Program_Memory.v {1 {vlog -work work -stats=none D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Program_Memory.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Program_Memory
+
+Top level modules:
+	Program_Memory
+
+} {} {}} D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Control.v {1 {vlog -work work -stats=none D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Control.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Control
+
+Top level modules:
+	Control
+
+} {} {}} D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/ALU.v {1 {vlog -work work -stats=none D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/ALU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Data_Memory.v {1 {vlog -work work -stats=none D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Data_Memory.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Data_Memory
+
+Top level modules:
+	Data_Memory
+
+} {} {}} D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Pipeline_Register.v {1 {vlog -work work -stats=none D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Pipeline_Register.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Pipeline_Register
+
+Top level modules:
+	Pipeline_Register
+
+} {} {}} D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle_TB.v {1 {vlog -work work -stats=none D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle_TB.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RISC_V_Single_Cycle_TB
+
+Top level modules:
+	RISC_V_Single_Cycle_TB
+
+} {} {}} D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Register_File.v {1 {vlog -work work -stats=none D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Register_File.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Register_File
+
+Top level modules:
+	Register_File
+
+} {} {}} D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Adder_32_Bits.v {1 {vlog -work work -stats=none D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Adder_32_Bits.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Adder_32_Bits
+
+Top level modules:
+	Adder_32_Bits
+
+} {} {}} D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Multiplexer_2_to_1.v {1 {vlog -work work -stats=none D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Multiplexer_2_to_1.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Multiplexer_2_to_1
+
+Top level modules:
+	Multiplexer_2_to_1
+
+} {} {}} D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/PC_Register.v {1 {vlog -work work -stats=none D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/PC_Register.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PC_Register
+
+Top level modules:
+	PC_Register
+
+} {} {}} D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Decoder_Register_File.v {1 {vlog -work work -stats=none D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Decoder_Register_File.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Decoder_Register_File
+
+Top level modules:
+	Decoder_Register_File
+
+} {} {}} D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/ALU_Control.v {1 {vlog -work work -stats=none D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/ALU_Control.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALU_Control
+
+Top level modules:
+	ALU_Control
+
+} {} {}} D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Register.v {1 {vlog -work work -stats=none D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/Register.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Register
+
+Top level modules:
+	Register
+
+} {} {}} D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/MUX_Register_File.v {1 {vlog -work work -stats=none D:/QUARTUS/PROJECTS/RISC_V_Single_Cycle/src/MUX_Register_File.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module MUXRegisterFile
+
+Top level modules:
+	MUXRegisterFile
+
+} {} {}}
