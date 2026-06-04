@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 /******************************************************************
 * Description
 *	This is a register of 32-bit that corresponds to the PC counter. 
@@ -19,6 +21,7 @@ module PC_Register
 (
 	input clk,
 	input reset,
+	input enable,
 	input  [N-1:0] Next_PC,
 	
 	
@@ -28,7 +31,7 @@ module PC_Register
 always@(negedge reset or posedge clk) begin
 	if(reset==0)
 		PC_Value <= 0;
-	else	
+	else if(enable==1)
 		PC_Value<= Next_PC;
 end
 

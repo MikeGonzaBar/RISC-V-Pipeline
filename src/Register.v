@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 /******************************************************************
 * Description
 *	This the basic register that is used in the register file
@@ -23,7 +25,7 @@ module Register
 	output reg [N-1:0] DataOutput
 );
 
-always@(negedge reset or posedge clk) begin
+always@(negedge reset or negedge clk) begin
 	if(reset==0)
 		DataOutput <= 0;
 	else	

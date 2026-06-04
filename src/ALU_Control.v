@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 /******************************************************************
 * Description
 *	This is the control unit for the ALU. It receves a signal called 
@@ -14,7 +16,7 @@
 ******************************************************************/
 module ALU_Control
 (
-	input funct7_i, 
+	input funct7_i,
 	input [2:0] ALU_Op_i,
 	input [2:0] funct3_i,
 	
@@ -23,43 +25,70 @@ module ALU_Control
 
 );
 
-localparam R_Type_ADD		= 7'b0_000_000;
-localparam I_Type_ADDI		= 7'bx_001_000;
-localparam U_Type_LUI		= 7'bx_010_xxx;
-localparam I_Type_ORI		= 7'bx_001_110;
-localparam I_Type_SLLI		= 7'b0_001_001;
-localparam I_Type_SRLI		= 7'b0_001_101;
-localparam R_Type_SUB		= 7'b1_000_000;
+localparam ALU_R_TYPE = 3'b000;
+localparam ALU_I_TYPE = 3'b001;
+localparam ALU_LUI    = 3'b010;
+localparam ALU_ADD    = 3'b011;
+localparam ALU_AUIPC  = 3'b100;
 
-
-
-
+localparam ADD  = 4'b0000;
+localparam LUI  = 4'b0001;
+localparam OR   = 4'b0010;
+localparam SLL  = 4'b0011;
+localparam SRL  = 4'b0100;
+localparam SUB  = 4'b0101;
+localparam AND  = 4'b0110;
+localparam XOR  = 4'b0111;
+localparam SLT  = 4'b1000;
+localparam SLTU = 4'b1001;
+localparam SRA  = 4'b1010;
 
 reg [3:0] alu_control_values;
-wire [6:0] selector;
 
-assign selector = {funct7_i, ALU_Op_i, funct3_i};
+always @(*) begin
+	alu_control_values = ADD;
 
-always@(selector)begin
-	casex(selector)
-	
-		R_Type_ADD:		alu_control_values = 4'b0000;
-      I_Type_ADDI:	alu_control_values = 4'b0000;
-		U_Type_LUI:		alu_control_values = 4'b0001;
-		I_Type_ORI:		alu_control_values = 4'b0010;
-		I_Type_SLLI:	alu_control_values = 4'b0011;
-		I_Type_SRLI:	alu_control_values = 4'b0100;
-		R_Type_SUB:		alu_control_values = 4'b0101;
-		
-		
-		
-		default: alu_control_values = 4'b00_00;
+	case (ALU_Op_i)
+		ALU_R_TYPE: begin
+			case (funct3_i)
+				3'b000: alu_control_values = funct7_i ? SUB : ADD;
+				3'b001: alu_control_values = SLL;
+				3'b010: alu_control_values = SLT;
+				3'b011: alu_control_values = SLTU;
+				3'b100: alu_control_values = XOR;
+				3'b101: alu_control_values = funct7_i ? SRA : SRL;
+				3'b110: alu_control_values = OR;
+				3'b111: alu_control_values = AND;
+				default: alu_control_values = ADD;
+			endcase
+		end
+
+		ALU_I_TYPE: begin
+			case (funct3_i)
+				3'b000: alu_control_values = ADD;
+				3'b001: alu_control_values = SLL;
+				3'b010: alu_control_values = SLT;
+				3'b011: alu_control_values = SLTU;
+				3'b100: alu_control_values = XOR;
+				3'b101: alu_control_values = funct7_i ? SRA : SRL;
+				3'b110: alu_control_values = OR;
+				3'b111: alu_control_values = AND;
+				default: alu_control_values = ADD;
+			endcase
+		end
+
+		ALU_LUI:
+			alu_control_values = LUI;
+
+		ALU_ADD,
+		ALU_AUIPC:
+			alu_control_values = ADD;
+
+		default:
+			alu_control_values = ADD;
 	endcase
 end
 
-
 assign ALU_Operation_o = alu_control_values;
-
-
 
 endmodule

@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 /******************************************************************
 * Description
 *	This is  module represents the register file where the registers 
@@ -26,7 +28,14 @@ module Register_File
 	input  [31:0] 	Write_Data_i,
 	
 	output [31:0] 	Read_Data_1_o,
-	output [31:0] 	Read_Data_2_o
+	output [31:0] 	Read_Data_2_o,
+	output [31:0] 	Debug_t0_o,
+	output [31:0] 	Debug_t1_o,
+	output [31:0] 	Debug_t2_o,
+	output [31:0] 	Debug_s0_o,
+	output [31:0] 	Debug_s1_o,
+	output [31:0] 	Debug_s2_o,
+	output [31:0] 	Debug_s3_o
 
 );
 
@@ -524,4 +533,12 @@ MUXRegister2
 	
 	.MUX_Output(Read_Data_2_o)
 );
+
+assign Debug_t0_o = Intercnection_wire[6*N-1:5*N];
+assign Debug_t1_o = Intercnection_wire[7*N-1:6*N];
+assign Debug_t2_o = Intercnection_wire[8*N-1:7*N];
+assign Debug_s0_o = Intercnection_wire[9*N-1:8*N];
+assign Debug_s1_o = Intercnection_wire[10*N-1:9*N];
+assign Debug_s2_o = Intercnection_wire[19*N-1:18*N];
+assign Debug_s3_o = Intercnection_wire[20*N-1:19*N];
 endmodule

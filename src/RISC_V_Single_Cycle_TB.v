@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 /******************************************************************
 * Description
 *	This is the verifaction envioroment for testeting the basic RISC-V

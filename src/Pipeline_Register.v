@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 /******************************************************************
 * Description
 *	This is a register of 32-bit that corresponds to the PC counter. 
@@ -19,16 +21,20 @@ module Pipeline_Register
 (
 	input clk,
 	input reset,
+	input enable,
+	input flush,
 	input  [N-1:0] pipeline_INPUT,
 	
 	
 	output reg [N-1:0] pipeline_OUTPUT
 );
 
-always@(negedge reset or negedge clk) begin
+always@(negedge reset or posedge clk) begin
 	if(reset==0)
 		pipeline_OUTPUT <= 0;
-	else	
+	else if(flush==1)
+		pipeline_OUTPUT <= 0;
+	else if(enable==1)
 		pipeline_OUTPUT <= pipeline_INPUT;
 end
 

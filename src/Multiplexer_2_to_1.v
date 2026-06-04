@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 /******************************************************************
 * Description
 *	This is a 2 to 1 multiplexer that can be parameterized in its bit-width.

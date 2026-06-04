@@ -1,0 +1,22 @@
+name: Icarus Verilog
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Icarus Verilog
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y iverilog
+
+      - name: Run regression suite
+        shell: pwsh
+        run: ./scripts/run_icarus_tests.ps1

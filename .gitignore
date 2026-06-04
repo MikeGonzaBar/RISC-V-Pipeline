@@ -1,0 +1,51 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+
+# Local Codex/Icarus simulation outputs
+.codex-sim/
+.codex-build/
+obj_dir/
+*.vvp
+*.vcd
+*.fst
+*.lxt
+*.lxt2
+a.out
+
+# Local assembler scratch outputs
+assembly_code/generated/
+assembly_code/*.o
+assembly_code/*.obj
+assembly_code/*.elf
+assembly_code/*.bin
+assembly_code/*.lst
+assembly_code/*.map
+
+# ModelSim generated simulation state
+proj_modelsim/work/
+proj_modelsim/*.wlf
+proj_modelsim/*.cr.mti
+proj_modelsim/transcript
+proj_modelsim/*.log
+
+# Quartus generated databases and reports
+proj_quartus/db/
+proj_quartus/incremental_db/
+proj_quartus/output_files/
+proj_quartus/*.qws
+proj_quartus/*.qdf
+proj_quartus/*.qsys_edit
+proj_quartus/*.bak
+proj_quartus/*.sopcinfo
+proj_quartus/*.rpt
+proj_quartus/*.summary
+proj_quartus/*.smsg
+proj_quartus/*.done
+proj_quartus/*.pin
+proj_quartus/*.sof
+proj_quartus/*.pof
+proj_quartus/*.jdi
+proj_quartus/*.sld
+proj_quartus/*.cdf
+proj_quartus/*.log
